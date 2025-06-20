@@ -1,28 +1,26 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, Github, ArrowRight, Download, ChevronDown, ExternalLink } from 'lucide-react';
+import { Mail, Phone, Github, ArrowRight, Download, ExternalLink, Linkedin, X } from 'lucide-react';
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
-
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const quickStats = [
-    { label: 'Experience', value: '9+ Months' },
-    { label: 'Projects', value: '15+' },
-    { label: 'CGPA', value: '8.79' }
-  ];
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/Sourav Mishra Resume.pdf'; // must be in /public
+    link.download = 'Sourav_Mishra_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 relative overflow-hidden">
@@ -33,9 +31,12 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-pink-400/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Navbar />
+
+      <div className="relative z-10 w-full px-8 md:px-2">
+
         {/* Main Hero Section */}
-        <div className="min-h-screen flex flex-col justify-center items-center text-center">
+        <div className="min-h-screen flex flex-col justify-center items-center text-center pt-20">
           <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-8">
@@ -53,125 +54,32 @@ export default function Home() {
 
             {/* Subtitle */}
             <p className="text-2xl sm:text-3xl text-slate-600 mb-6 font-light">
-              Product Engineer
+              Full Stack Developer
             </p>
 
             {/* Brief Description */}
             <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Full Stack Developer passionate about building scalable web applications
+              A Computer Science Graduate passionate about building scalable web applications
               and innovative solutions using modern technologies.
             </p>
 
             {/* Primary Actions */}
             <div className="flex flex-col sm:flex-row gap-4 mb-16 justify-center">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group">
+              <button onClick={() => setIsConnectModalOpen(true)} className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group">
                 <Mail size={20} />
                 Let's Connect
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <button className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-xl font-semibold hover:bg-slate-100 hover:border-slate-400 transition-all duration-300 flex items-center justify-center gap-2">
+              <button
+                onClick={handleDownload}
+                className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-xl font-semibold hover:bg-slate-100 hover:border-slate-400 transition-all duration-300 flex items-center justify-center gap-2">
                 <Download size={20} />
                 Resume
               </button>
             </div>
 
-            {/* Quick Contact Links */}
-            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center text-slate-600 mb-16">
-              <a href="mailto:mishra.sourav79@gmail.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors">
-                <Mail size={18} />
-                mishra.sourav79@gmail.com
-              </a>
-              <a href="tel:+918249979473" className="flex items-center gap-2 hover:text-blue-600 transition-colors">
-                <Phone size={18} />
-                +91-8249979473
-              </a>
-              <a href="https://github.com/souravmishra" className="flex items-center gap-2 hover:text-blue-600 transition-colors">
-                <Github size={18} />
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
 
-        {/* Quick Stats Section */}
-        <div className={`py-20 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {quickStats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="text-3xl font-bold text-blue-600 mb-3 group-hover:scale-110 transition-transform">
-                    {stat.value}
-                  </div>
-                  <div className="text-slate-600 font-medium">{stat.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Current Role Highlight */}
-        <div className={`py-20 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-slate-200 shadow-xl max-w-4xl mx-auto text-center">
-            <div className="mb-6">
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                Currently Working
-              </div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-2">
-                Product Engineer Intern
-              </h3>
-              <p className="text-xl text-blue-600 font-semibold mb-4">
-                Reverie Language Technologies
-              </p>
-              <p className="text-slate-600 max-w-2xl mx-auto">
-                Building scalable web applications and API solutions that serve millions of users.
-                Working with cutting-edge technologies to create innovative products.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              {['Next.js', 'React.js', 'Node.js', 'MongoDB', 'API Development'].map((tech) => (
-                <span key={tech} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <button className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors group">
-              Learn more about my work
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div>
-
-        {/* Navigation to Other Sections */}
-        <div className={`py-20 transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-slate-900 mb-4">Explore More</h3>
-            <p className="text-xl text-slate-600">Discover my work, skills, and projects</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {[
-              { title: 'My Work', description: 'Professional experience & achievements', icon: '💼' },
-              { title: 'Technologies', description: 'Skills & tools I work with', icon: '🛠️' },
-              { title: 'Projects', description: 'Featured work & case studies', icon: '🚀' },
-              { title: 'Contact', description: 'Let\'s discuss opportunities', icon: '📧' }
-            ].map((section, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center">
-                  <div className="text-3xl mb-4 group-hover:scale-110 transition-transform">
-                    {section.icon}
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">{section.title}</h4>
-                  <p className="text-slate-600 text-sm mb-4">{section.description}</p>
-                  <div className="flex items-center justify-center gap-1 text-blue-600 font-semibold group-hover:gap-2 transition-all">
-                    Explore
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
 
@@ -186,19 +94,95 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                <a href="mailto:mishra.sourav79@gmail.com" className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
                   <Mail size={20} />
                   Start a Conversation
-                </button>
-                <button className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2">
+                </a>
+                <a href="/projects" className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2">
                   <ExternalLink size={20} />
                   View My Work
-                </button>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {isConnectModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex justify-center items-center p-4"
+          onClick={() => setIsConnectModalOpen(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full relative transition-all duration-300 transform scale-100"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsConnectModalOpen(false)}
+              className="absolute top-4 right-4 text-slate-500 hover:text-slate-800 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Let's Connect</h3>
+            <div className="flex flex-col gap-4">
+              {/* Email */}
+              <a
+                href="mailto:mishra.sourav79@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200 group"
+              >
+                <Mail size={24} className="text-blue-600" />
+                <div>
+                  <p className="font-semibold text-slate-800">Email</p>
+                  <p className="text-sm text-slate-500 group-hover:text-blue-600 transition-colors">mishra.sourav79@gmail.com</p>
+                </div>
+              </a>
+
+              {/* Phone */}
+              <a
+                href="tel:+918249979473"
+                className="flex items-center gap-4 p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200 group"
+              >
+                <Phone size={24} className="text-green-600" />
+                <div>
+                  <p className="font-semibold text-slate-800">Phone</p>
+                  <p className="text-sm text-slate-500 group-hover:text-green-600 transition-colors">+91-8249979473</p>
+                </div>
+              </a>
+
+              {/* GitHub */}
+              <a
+                href="https://github.com/souravmishra"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200 group"
+              >
+                <Github size={24} className="text-slate-800" />
+                <div>
+                  <p className="font-semibold text-slate-800">GitHub</p>
+                  <p className="text-sm text-slate-500 group-hover:text-slate-900 transition-colors">/souravmishra</p>
+                </div>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/sourav456/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200 group"
+              >
+                <Linkedin size={24} className="text-blue-700" />
+                <div>
+                  <p className="font-semibold text-slate-800">LinkedIn</p>
+                  <p className="text-sm text-slate-500 group-hover:text-blue-700 transition-colors">Sourav Mishra</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
