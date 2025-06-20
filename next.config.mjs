@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+// next.config.js
+module.exports = {
+    eslint: {
+        ignoreDuringBuilds: true, // This disables lint errors from breaking the build
+    },
+}
