@@ -8,8 +8,8 @@ const educationData = [
         institution: "Siksha 'O' Anusandhan (ITER)",
         degree: "B. Tech in Computer Science & Engineering",
         score: "CGPA: 8.79",
-        duration: "2021 – 2025",
-        location: "Odisha, India",
+        duration: "2025",
+        location: "Bhubaneswar, Odisha",
         logo: "🎓",
         color: "from-purple-500 to-pink-500",
         bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
@@ -221,7 +221,7 @@ export default function EnhancedEducationPage() {
                     <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl max-w-2xl mx-auto">
                         <h3 className="text-2xl font-bold text-slate-900 mb-4">Ready for the Next Chapter</h3>
                         <p className="text-slate-600 mb-6">
-                            Currently pursuing my final year in Computer Science & Engineering, ready to apply my knowledge in real-world challenges.
+                            Undergraduate in Computer Science & Engineering, ready to apply my knowledge in real-world challenges.
                         </p>
                         <div className="flex items-center justify-center gap-4">
                             <div className="flex items-center gap-2 text-sm text-slate-600">
