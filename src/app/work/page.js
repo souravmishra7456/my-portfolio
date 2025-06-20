@@ -14,7 +14,7 @@ const WorkExperience = () => {
             company: "Reverie Language Technologies",
             role: "Product Engineer Intern",
             duration: "August 2024 – May 2025",
-            type: "Internship",
+            type: "Bengaluru, Karnataka, India",
             logo: "R",
             color: "bg-blue-500",
             achievements: [
@@ -105,7 +105,14 @@ const WorkExperience = () => {
                                                         </div>
                                                         <div>
                                                             <h3 className="text-xl font-bold text-gray-900">{experience.role}</h3>
-                                                            <p className="text-lg text-blue-600 font-semibold">{experience.company}</p>
+                                                            <a
+                                                                href="https://www.reverieinc.com"
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-lg text-blue-600 font-semibold hover:underline"
+                                                            >
+                                                                {experience.company}
+                                                            </a>
                                                         </div>
                                                     </div>
 
