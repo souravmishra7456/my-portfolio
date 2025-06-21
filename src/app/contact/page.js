@@ -20,7 +20,6 @@ const Contact = () => {
             ...prev,
             [name]: value
         }));
-        // Clear error when user starts typing
         if (errors[name]) {
             setErrors(prev => ({
                 ...prev,
@@ -63,7 +62,6 @@ const Contact = () => {
         setIsSubmitting(true);
 
         try {
-            // ✅ Replace these with your actual IDs
             const serviceID = 'service_xdqvuzs';
             const templateID = 'template_v9lu0dn';
             const publicKey = 'CkWn01oKTBPEPY_Tc';
