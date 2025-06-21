@@ -139,18 +139,6 @@ export default function Home() {
                 </div>
               </a>
 
-              {/* Phone */}
-              <a
-                href="tel:+918249979473"
-                className="flex items-center gap-4 p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200 group"
-              >
-                <Phone size={24} className="text-green-600" />
-                <div>
-                  <p className="font-semibold text-slate-800">Phone</p>
-                  <p className="text-sm text-slate-500 group-hover:text-green-600 transition-colors">+91-8249979473</p>
-                </div>
-              </a>
-
               {/* GitHub */}
               <a
                 href="https://github.com/souravmishra"

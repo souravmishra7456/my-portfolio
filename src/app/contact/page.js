@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import { Mail, User, MessageSquare, Send, MapPin, Phone, Globe, Github, Linkedin, CheckCircle, Instagram } from 'lucide-react';
+import { Mail, User, MessageSquare, Send, MapPin, Phone, Globe, Github, Linkedin, CheckCircle, Instagram, X, Twitter } from 'lucide-react';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -90,12 +90,6 @@ const Contact = () => {
             href: "mailto:mishra.sourav79@gmail.com"
         },
         {
-            icon: <Phone className="w-5 h-5" />,
-            label: "Phone",
-            value: "+91 82499 79473",
-            href: "tel:+918249979473"
-        },
-        {
             icon: <MapPin className="w-5 h-5" />,
             label: "Location",
             value: "Bhubaneswar, Odisha, India",
@@ -107,14 +101,20 @@ const Contact = () => {
         {
             icon: <Linkedin className="w-5 h-5" />,
             label: "LinkedIn",
-            href: "#",
+            href: "https://www.linkedin.com/in/sourav456/",
             color: "hover:text-blue-600"
         },
         {
             icon: <Instagram className="w-5 h-5" />,
             label: "Instagram",
-            href: "#",
+            href: "https://www.instagram.com/_.souravmishra._/",
             color: "hover:text-pink-600"
+        },
+        {
+            icon: <Twitter className="w-5 h-5" />,
+            label: "Instagram",
+            href: "https://x.com/SouravMishra79",
+            color: "hover:text-black-600"
         }
     ];
 
@@ -226,7 +226,7 @@ const Contact = () => {
                                             onChange={handleChange}
                                             className={`block w-full pl-10 pr-3 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-none ${errors.message ? 'border-red-300 bg-red-50' : 'border-gray-300'
                                                 }`}
-                                            placeholder="Tell me about your project, ideas, or just say hello..."
+                                            placeholder="Leave Feedback about the Website, Career Opportunities or Just to say hello etc."
                                         />
                                     </div>
                                     {errors.message && (
@@ -305,7 +305,7 @@ const Contact = () => {
                             <h3 className="text-xl font-bold mb-2">Quick Response</h3>
                             <p className="text-blue-100 text-sm leading-relaxed">
                                 I typically respond to messages within 24 hours. For urgent inquiries,
-                                feel free to reach out via email or phone.
+                                feel free to reach out via email or my socials.
                             </p>
                         </div>
                     </div>
