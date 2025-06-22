@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { Mail, Phone, Github, ArrowRight, Download, ExternalLink, Linkedin, X } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { Typewriter } from 'react-simple-typewriter';
+import Link from "next/link";
+
 
 
 export default function Home() {
@@ -103,14 +105,17 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:mishra.sourav79@gmail.com" className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                <Link href="/contact" className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
                   <Mail size={20} />
                   Start a Conversation
-                </a>
-                <a href="/projects" className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2">
+                </Link>
+                <Link
+                  href="/projects"
+                  className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
+                >
                   <ExternalLink size={20} />
                   View My Work
-                </a>
+                </Link>
               </div>
             </div>
           </div>
