@@ -217,14 +217,6 @@ const WorkExperience = () => {
                     </div>
                 )}
 
-                {/* Summary */}
-                <div className="mt-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg p-6 text-white text-center">
-                    <h3 className="text-xl font-bold mb-3">Professional Growth</h3>
-                    <p className="text-blue-100 leading-relaxed">
-                        Progressed from intern to full-time Product Engineer, contributing to cutting-edge AI-powered
-                        language technologies while building expertise in full-stack development, security, and developer tooling.
-                    </p>
-                </div>
             </div>
         </div>
     );
