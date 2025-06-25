@@ -155,7 +155,7 @@ export default function Home() {
 
               {/* GitHub */}
               <a
-                href="https://github.com/souravmishra"
+                href="https://github.com/souravmishra7456"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200 group"
@@ -163,7 +163,7 @@ export default function Home() {
                 <Github size={24} className="text-slate-800" />
                 <div>
                   <p className="font-semibold text-slate-800">GitHub</p>
-                  <p className="text-sm text-slate-500 group-hover:text-slate-900 transition-colors">/souravmishra</p>
+                  <p className="text-sm text-slate-500 group-hover:text-slate-900 transition-colors">/souravmishra7456</p>
                 </div>
               </a>
 
