@@ -210,14 +210,24 @@ const Projects = () => {
                         I'm always excited to discuss new opportunities and collaborate on interesting projects.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2">
+                        <a
+                            href="https://github.com/souravmishra7456"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2"
+                        >
                             <Github className="w-4 h-4" />
                             View All Projects
-                        </button>
-                        <button className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-200 border border-blue-400">
+                        </a>
+
+                        <a
+                            href="https://sourav-portfolio-psi.vercel.app/contact"
+                            className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-200 border border-blue-400 text-center"
+                        >
                             Get In Touch
-                        </button>
+                        </a>
                     </div>
+
                 </div>
             </div>
         </div>
