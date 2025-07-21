@@ -18,8 +18,8 @@ const Projects = () => {
             category: "Full Stack",
             icon: <Smartphone className="w-6 h-6" />,
             gradient: "from-green-500 to-emerald-600",
-            demoLink: "#", // Replace with actual demo link
-            githubLink: "#" // Replace with actual GitHub link
+            demoLink: "https://krishi-shayata-staging.vercel.app/login", // Replace with actual demo link
+            githubLink: "https://github.com/om-666/KrishiShayataStaging" // Replace with actual GitHub link
         },
         {
             id: 2,
@@ -34,11 +34,26 @@ const Projects = () => {
             category: "Full Stack",
             icon: <Calendar className="w-6 h-6" />,
             gradient: "from-purple-500 to-indigo-600",
-            demoLink: "#", // Replace with actual demo link
-            githubLink: "#" // Replace with actual GitHub link
+            githubLink: "https://github.com/souravmishra7456/Eventia" // Replace with actual GitHub link
         },
         {
             id: 3,
+            title: "Dev Excuse API",
+            description: "The Ultimate Developer Excuse API. Never run out of creative excuses again. Our API provides 100+ developer-tested excuses for every situation, categorized and searchable.",
+            technologies: ["Next.js", "Tailwind CSS", "Node.js", "Express.js"],
+            features: [
+                "Provides over 100 developer-tested excuses via a REST API.",
+                "Features include random excuses, category filtering, and keyword search.",
+                "Interactive API documentation built with Next.js and Tailwind CSS."
+            ],
+            category: "Full Stack",
+            icon: <Code className="w-6 h-6" />,
+            gradient: "from-yellow-500 to-orange-600",
+            demoLink: "https://excuses-one.vercel.app/",
+            githubLink: "https://github.com/souravmishra7456/excuses"
+        },
+        {
+            id: 4,
             title: "Network Desktop Manager",
             description: "Secure remote desktop access software with administrative controls and real-time communication",
             technologies: ["Java (Swing)", "Java Sockets"],
@@ -50,14 +65,14 @@ const Projects = () => {
             category: "Desktop Application",
             icon: <Monitor className="w-6 h-6" />,
             gradient: "from-blue-500 to-cyan-600",
-            demoLink: "#", // Replace with actual demo link
-            githubLink: "#" // Replace with actual GitHub link
+            githubLink: "https://github.com/souravmishra7456/networkdesktopmanager" // Replace with actual GitHub link
         }
     ];
 
     const getTechIcon = (tech) => {
         const techIcons = {
             'React.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+            'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
             'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
             'Express.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
             'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
@@ -122,13 +137,15 @@ const Projects = () => {
                                         >
                                             <Github className="w-5 h-5" />
                                         </button>
-                                        <button
-                                            onClick={() => window.open(project.demoLink, '_blank')}
-                                            className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors duration-200"
-                                            title="Live Demo"
-                                        >
-                                            <ExternalLink className="w-5 h-5" />
-                                        </button>
+                                        {project.demoLink && (
+                                            <button
+                                                onClick={() => window.open(project.demoLink, '_blank')}
+                                                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors duration-200"
+                                                title="Live Demo"
+                                            >
+                                                <ExternalLink className="w-5 h-5" />
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                                 <p className="text-white/90 leading-relaxed">{project.description}</p>

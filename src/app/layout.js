@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 
 export const metadata = {
   title: 'Sourav Mishra | Portfolio',
-  description: 'Frontend developer crafting responsive UIs and interactive web apps. Explore my projects, skills, and experience.',
+  description: 'Full Stack developer crafting responsive UIs and interactive web apps. Explore my projects, skills, and experience.',
   keywords: ['Sourav Mishra', 'Frontend Developer', 'React Developer', 'Web Portfolio', 'JavaScript Projects', 'TailwindCSS', 'Next.js Developer'],
   authors: [{ name: 'Sourav Mishra', url: 'https://sourav-portfolio-psi.vercel.app' }],
   creator: 'Sourav Mishra',
