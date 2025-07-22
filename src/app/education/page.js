@@ -7,7 +7,7 @@ const educationData = [
     {
         institution: "Siksha 'O' Anusandhan (ITER)",
         degree: "B. Tech in Computer Science & Engineering",
-        score: "CGPA: 8.79",
+        score: "CGPA: 8.87",
         duration: "2025",
         location: "Bhubaneswar, Odisha",
         logo: "🎓",
