@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import {
     Calendar, MapPin, Code, Shield, FileText,
-    BarChart3, Wrench, Package
+    BarChart3, Wrench, Package, Database, BarChart4, FileSpreadsheet
 } from 'lucide-react';
 
 const WorkExperience = () => {
@@ -11,11 +11,41 @@ const WorkExperience = () => {
 
     const workExperiences = [
         {
+            company: "KPMG India",
+            role: "Analyst – G & PS (GovTech)",
+            duration: "Aug 2025 – Present",
+            type: "Kolkata, West Bengal, India",
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCLvx1x8oeXs-DidUVmNti1LMUwkdDG3Fn0Q&s",
+            color: "bg-green-500",
+            achievements: [
+                {
+                    icon: <Database className="w-4 h-4" />,
+                    text: "Collect, validate, and manage data from field and system sources to support monitoring of government health schemes."
+                },
+                {
+                    icon: <BarChart4 className="w-4 h-4" />,
+                    text: "Generate periodic reports, dashboards, and visual summaries using tools like Power BI/Tableau for stakeholder decision-making."
+                },
+                {
+                    icon: <Shield className="w-4 h-4" />,
+                    text: "Ensure data accuracy, consistency, and integrity across multiple systems and platforms."
+                },
+                {
+                    icon: <FileSpreadsheet className="w-4 h-4" />,
+                    text: "Maintain and enhance MIS tools, templates, and workflows to improve operational efficiency."
+                },
+                {
+                    icon: <Wrench className="w-4 h-4" />,
+                    text: "Assist in troubleshooting data-related issues and support performance monitoring and evaluation activities."
+                }
+            ]
+        },
+        {
             company: "Reverie Language Technologies",
             role: "Product Engineer Intern",
             duration: "August 2024 – May 2025",
             type: "Bengaluru, Karnataka, India",
-            logo: "R",
+            logo: "https://revup.reverieinc.com/logo.svg",
             color: "bg-blue-500",
             achievements: [
                 {
@@ -37,7 +67,6 @@ const WorkExperience = () => {
                     icon: <Code className="w-4 h-4" />,
                     text: "Developed a dynamic and responsive web application using Next.js, delivering an optimized front-end experience across various devices and screen sizes"
                 },
-
                 {
                     icon: <Package className="w-4 h-4" />,
                     text: "Developed and published modular NPM packages for Reverie's APIs, which formed the basis for creating developer-friendly JavaScript SDKs, simplifying integration and enhancing accessibility across multiple programming environments"
@@ -66,12 +95,13 @@ const WorkExperience = () => {
                     text: "Collaborated in the development of an Admin Dashboard that provides detailed visualizations of user activity, system performance, and usage analytics to support better decision-making"
                 }
             ]
-        }
+        },
     ];
 
     const allSkills = [
-        "React.js", "Next.js", "Node.js", "Express.js", "MongoDB", ,
-        "JavaScript", , "Git", "Jira", "Mintlify", "Tailwind CSS",
+        "React.js", "Next.js", "Node.js", "Express.js", "MongoDB",
+        "JavaScript", "Git", "Jira", "Mintlify", "Tailwind CSS",
+        "MS Excel", "Power BI", "Tableau", "SQL"
     ];
 
     return (
@@ -101,12 +131,26 @@ const WorkExperience = () => {
                                                 <div className="flex-1">
                                                     <div className="flex items-center gap-3 mb-2">
                                                         <div className="w-10 h-10 rounded-lg overflow-hidden bg-white border border-gray-200 flex items-center justify-center">
-                                                            <img src="https://revup.reverieinc.com/logo.svg" alt="Reverie Logo" className="w-full h-full object-contain p-1" />
+                                                            {experience.company === "KPMG India" ? (
+                                                                <img
+                                                                    src={experience.logo}
+                                                                    alt={`${experience.company} Logo`}
+                                                                    className="w-full h-full object-cover"
+                                                                />
+                                                            ) : (
+                                                                <img
+                                                                    src={experience.logo}
+                                                                    alt={`${experience.company} Logo`}
+                                                                    className="w-full h-full object-contain p-1"
+                                                                />
+                                                            )}
                                                         </div>
+
+
                                                         <div>
                                                             <h3 className="text-xl font-bold text-gray-900">{experience.role}</h3>
                                                             <a
-                                                                href="https://www.reverieinc.com"
+                                                                href={experience.company === "KPMG India" ? "https://home.kpmg/in/en/home.html" : "https://www.reverieinc.com"}
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
                                                                 className="text-lg text-blue-600 font-semibold hover:underline"
@@ -211,12 +255,10 @@ const WorkExperience = () => {
                                     alt="Internship Certificate"
                                     className="w-full rounded-lg border max-h-[90vh] object-contain"
                                 />
-
                             </div>
                         </div>
                     </div>
                 )}
-
             </div>
         </div>
     );
