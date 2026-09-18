@@ -9,100 +9,111 @@ import {
 const WorkExperience = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const workExperiences = [
-        {
-            company: "KPMG India",
-            role: "Analyst – G & PS (GovTech)",
-            duration: "Aug 2025 – Present",
-            type: "Kolkata, West Bengal, India",
-            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCLvx1x8oeXs-DidUVmNti1LMUwkdDG3Fn0Q&s",
-            color: "bg-green-500",
-            achievements: [
-                {
-                    icon: <Database className="w-4 h-4" />,
-                    text: "Collect, validate, and manage data from field and system sources to support monitoring of government health schemes."
-                },
-                {
-                    icon: <BarChart4 className="w-4 h-4" />,
-                    text: "Generate periodic reports, dashboards, and visual summaries using tools like Power BI/Tableau for stakeholder decision-making."
-                },
-                {
-                    icon: <Shield className="w-4 h-4" />,
-                    text: "Ensure data accuracy, consistency, and integrity across multiple systems and platforms."
-                },
-                {
-                    icon: <FileSpreadsheet className="w-4 h-4" />,
-                    text: "Maintain and enhance MIS tools, templates, and workflows to improve operational efficiency."
-                },
-                {
-                    icon: <Wrench className="w-4 h-4" />,
-                    text: "Assist in troubleshooting data-related issues and support performance monitoring and evaluation activities."
-                }
-            ]
-        },
-        {
-            company: "Reverie Language Technologies",
-            role: "Product Engineer Intern",
-            duration: "August 2024 – May 2025",
-            type: "Bengaluru, Karnataka, India",
-            logo: "https://revup.reverieinc.com/logo.svg",
-            color: "bg-blue-500",
-            achievements: [
-                {
-                    icon: <Wrench className="w-4 h-4" />,
-                    text: <>
-                        Built an interactive API Playground -{" "}
-                        <a
-                            href="https://revup.reverieinc.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-blue-600 hover:underline"
-                        >
-                            RevUp
-                        </a>{" "}
-                        that allows users and developers to test and explore Reverie's APIs in real time, improving engagement and understanding of API capabilities
-                    </>
-                },
-                {
-                    icon: <Code className="w-4 h-4" />,
-                    text: "Developed a dynamic and responsive web application using Next.js, delivering an optimized front-end experience across various devices and screen sizes"
-                },
-                {
-                    icon: <Package className="w-4 h-4" />,
-                    text: "Developed and published modular NPM packages for Reverie's APIs, which formed the basis for creating developer-friendly JavaScript SDKs, simplifying integration and enhancing accessibility across multiple programming environments"
-                },
-                {
-                    icon: <Shield className="w-4 h-4" />,
-                    text: "Addressed critical VAPT (Vulnerability Assessment and Penetration Testing) issues in RevUp, significantly improving the product's security and compliance standards"
-                },
-                {
-                    icon: <FileText className="w-4 h-4" />,
-                    text: <>
-                        Authored comprehensive and easy-to-follow{" "}
-                        <a
-                            href="https://docs.reverieinc.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-blue-600 hover:underline"
-                        >
-                            Reverie's API documentation
-                        </a>{" "}
-                        using Mintlify, ensuring smooth onboarding and integration for developers through clear examples and structured content.
-                    </>
-                },
-                {
-                    icon: <BarChart3 className="w-4 h-4" />,
-                    text: "Collaborated in the development of an Admin Dashboard that provides detailed visualizations of user activity, system performance, and usage analytics to support better decision-making"
-                }
-            ]
-        },
-    ];
+const workExperiences = [
+    {
+        company: "KPMG India",
+        role: "Analyst – G & PS (GovTech)",
+        duration: "Aug 2025 – Present",
+        type: "Gumla, Jharkhand, India",
+        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCLvx1x8oeXs-DidUVmNti1LMUwkdDG3Fn0Q&s",
+        color: "bg-green-500",
+        achievements: [
+            {
+                icon: <Code className="w-4 h-4" />,
+                text: "Contributed to the frontend development of Doctor Data and Infrastructure Tracking Portals using React.js and TypeScript, supporting healthcare workforce and infrastructure monitoring."
+            },
+            {
+                icon: <Shield className="w-4 h-4" />,
+                text: "Executed User Acceptance Testing (UAT) for web portals, identified functional and usability gaps, and coordinated with development teams for resolution."
+            },
+            {
+                icon: <Wrench className="w-4 h-4" />,
+                text: "Coordinated with internal stakeholders, field teams, government officials, and implementation agencies to resolve system-level and operational issues."
+            },
+            {
+                icon: <BarChart4 className="w-4 h-4" />,
+                text: "Conducted comprehensive gap analysis across health infrastructure, service delivery, and resource utilization to support targeted interventions."
+            },
+            {
+                icon: <Database className="w-4 h-4" />,
+                text: "Conducted exploratory data analysis (EDA) on large district datasets using Excel, deriving actionable insights for project planning and monitoring."
+            }
+        ]
+    },
+    {
+        company: "Reverie Language Technologies",
+        role: "Product Engineer Intern",
+        duration: "Aug 2024 – May 2025",
+        type: "Bengaluru, Karnataka, India",
+        logo: "https://revup.reverieinc.com/logo.svg",
+        color: "bg-blue-500",
+        achievements: [
+            {
+                icon: <Wrench className="w-4 h-4" />,
+                text: <>
+                    Built an interactive API Playground -{" "}
+                    <a
+                        href="https://revup.reverieinc.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-blue-600 hover:underline"
+                    >
+                        RevUp
+                    </a>{" "}
+                    that allows users and developers to test and explore Reverie's APIs in real time.
+                </>
+            },
+            {
+                icon: <Code className="w-4 h-4" />,
+                text: "Developed a dynamic and responsive web application using Next.js, delivering an optimized front-end experience across various devices and screen sizes."
+            },
+            {
+                icon: <Package className="w-4 h-4" />,
+                text: "Developed and published modular NPM packages for Reverie's APIs, supporting developer-friendly JavaScript SDKs and simplifying API integration."
+            },
+            {
+                icon: <Shield className="w-4 h-4" />,
+                text: "Addressed critical VAPT (Vulnerability Assessment and Penetration Testing) issues in RevUp, improving product security and compliance."
+            },
+            {
+                icon: <FileText className="w-4 h-4" />,
+                text: <>
+                    Authored comprehensive API documentation using{" "}
+                    <a
+                        href="https://docs.reverieinc.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-blue-600 hover:underline"
+                    >
+                        Mintlify
+                    </a>
+                    , ensuring clear developer onboarding and integration through structured documentation and examples.
+                </>
+            },
+            {
+                icon: <BarChart3 className="w-4 h-4" />,
+                text: "Collaborated in the development of an Admin Dashboard providing visualizations of user activity, system performance, and usage analytics."
+            }
+        ]
+    }
+];
 
-    const allSkills = [
-        "React.js", "Next.js", "Node.js", "Express.js", "MongoDB",
-        "JavaScript", "Git", "Jira", "Mintlify", "Tailwind CSS",
-        "MS Excel", "Power BI", "Tableau", "SQL"
-    ];
+const allSkills = [
+    "React.js",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Git",
+    "Jira",
+    "Tailwind CSS",
+    "MS Excel",
+    "Power BI",
+    "SQL",
+    "Mintlify"
+];
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 md:pt-18 py-12 px-4 sm:px-6 lg:px-8">
